@@ -43,10 +43,10 @@ The initial training set was further divided into a final training set (85%) and
 
 # **3. 🛠️ Methodology**
 
-* ## **🔄Data Preprocessing & 🎛️Augmentation**
+* ## **🔄Data Preprocessing & 🎛️Augmentation:**
 To improve model generalization and prevent overfitting, extensive data augmentation was applied to the training dataset.
 
-### **🧪Training Transforms:**
+### **🧪 Training Transforms:**
 * **Resize(256):** Resizes images to 256x256 pixels.
 * **RandomHorizontalFlip():** Randomly flips images horizontally.
 * **RandomRotation(35):** Randomly rotates images by up to 35 degrees.
@@ -55,5 +55,30 @@ To improve model generalization and prevent overfitting, extensive data augmenta
 * **ToTensor():** Converts images to PyTorch tensors.
 * **ormalize():** Normalizes tensors with ImageNet's mean and standard deviation.
 
-### **🧪Validation & Test Transforms:**
+### **🧪 Validation & Test Transforms:**
 Only essential preprocessing steps (Resize, CenterCrop, ToTensor, Normalize) were applied to the validation and test sets to ensure a consistent evaluation.
+
+* ## **💻 Model Architecture:**
+The core of this project is a custom model built upon the EfficientNet-B4 architecture, pre-trained on the ImageNet dataset. This approach utilizes transfer learning.
+1. **Base Model:** efficientnet_b4 is loaded from the timm (PyTorch Image Models) library.
+2. **Feature Extractor (Backbone):** The main convolutional blocks of EfficientNet-B4 are used as a feature extractor. The weights of these layers are frozen (requires_grad = False), so they are not updated during training.
+3. **Custom Deconvolution Block (CustomDeconvCNN):** A custom module was designed to refine the features extracted by the backbone. This block consists of:
+    * Two Transposed Convolution (ConvTranspose2d) layers to upsample the feature maps.
+    * Two standard Convolution (Conv2d) layers for further feature processing.
+This block is inserted between the backbone and the final classification head.
+4. **Custom Classifier (CustomClassifier):** The original classifier is replaced with a custom fully connected head that includes:
+    * A linear layer mapping input features to 512 hidden units.
+    * A ReLU activation function.
+    * A Dropout layer (p=0.3) to prevent overfitting.
+    * A final linear layer mapping the 512 units to the 4 output classes.
+
+### The final model (CustomEfficientNetB4) integrates these components in the following forward pass sequence:
+### ***Image -> Backbone -> CustomDeconvCNN -> Original ConvHead -> Global Pooling -> CustomClassifier -> Output***
+
+* ## **🎯 Training Process:**
+* **Environment:** The model was trained in a Google Colab environment using a T4 GPU.
+* **Hyperparameters:**
+    * Optimizer: Adam with a learning rate of 0.001 and weight decay of 1e-4.
+    * Loss Function: CrossEntropyLoss, suitable for multi-class classification.
+    * Epochs: 30.
+    * Batch Size: 64.
