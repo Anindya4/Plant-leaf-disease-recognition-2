@@ -5,15 +5,15 @@ This project demonstrates the use of a deep learning model to classify plant lea
     1. Overview
     2. Dataset
     3. Methodology
-        * Data Preprocessing & Augmentation
-        * Model Architecture
-        * Training Process
+        - Data Preprocessing & Augmentation
+        - Model Architecture
+        - Training Process
     4. Results
-        * Performance Metrics
-        * Training & Validation Curves
-        * Confusion Matrix
-        * Classification Report
+        - Performance Metrics
+        - Training & Validation Curves
+        - Confusion Matrix
+        - Classification Report
     6. How to Replicate
-        * Prerequisites
-        * Setup
+        - Prerequisites
+        - Setup
     7. Note on Implementation
