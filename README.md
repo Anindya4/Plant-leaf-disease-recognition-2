@@ -82,3 +82,18 @@ This block is inserted between the backbone and the final classification head.
     * ***Loss Function: CrossEntropyLoss, suitable for multi-class classification.***
     * **Epochs: 30.**
     * **Batch Size: 64.**
+
+# **4. 📊 Results**
+The model demonstrated excellent performance on the test set, validating its effectiveness in classifying grapevine diseases.
+
+* ## ***Performance Metrics:***
+    * ***Train Accuracy: 98.75%***
+    * ***Test Accuracy: 98.17%***
+
+* ## ***Confusion Matrix:***
+**The confusion matrix highlights the model's high accuracy for each class, with very few misclassifications.**
+
+* ## ***Classification Report:***
+The classification report provides a detailed breakdown of the model's performance, showing high precision, recall, and F1-scores for all four classes.
+![classification_report](D:\Programing\Github\img.png)
+
