@@ -77,7 +77,7 @@ The original classifier is replaced with a custom fully connected head that incl
     * A final linear layer mapping the 512 units to the 4 output classes.
 
 ### The final model (CustomEfficientNetB4) integrates these components in the following forward pass sequence:
-### `***Image -> Backbone -> CustomDeconvCNN -> Original ConvHead -> Global Pooling -> CustomClassifier -> Output***`
+### `Image -> Backbone -> CustomDeconvCNN -> Original ConvHead -> Global Pooling -> CustomClassifier -> Output`
 
 * ## **🎯 Training Process:**
 * ***Environment:*** The model was trained in a Google Colab environment using a T4 GPU.
@@ -119,8 +119,8 @@ The classification report provides a detailed breakdown of the model's performan
 # **5. 🚀 How to Replicate**
 
 * ### **⚒️ Prerequisites:**  
-Make sure you have Python 3 and the following libraries installed. You can install them using pip:
- ```pip install torch torchvision numpy matplotlib scikit-learn timm```
+Make sure you have Python 3 and the following libraries installed. You can install them using pip:  
+```pip install torch torchvision numpy matplotlib scikit-learn timm```
 
 * ### **⚙️ Setup**
 **1. 🧬 Clone the Repository:**  
@@ -129,3 +129,14 @@ Make sure you have Python 3 and the following libraries installed. You can insta
 
 **2. Dataset:**  
 Download the Grapevine Leaves Image Dataset from files and place the GrapeVine.zip file in a directory accessible by the notebook (e.g., `/content/drive/MyDrive/Dataset/ in Google Colab`).
+
+**Update Paths:**  Modify the file paths in the notebook to match the location of your dataset.
+
+**Run the Notebook:**  Execute the cells in the `Notebook.ipynb` file sequentially.
+
+# **6. ⚠️ Note on Implementation**
+
+An important detail was discovered during the analysis of the notebook. Although a `CustomEfficientNetB4` class with a deconvolutional block was defined, the training loop in `Cell 33` was executed on the original `timm` model instance (model), not the `custom one (custom_model)`.   ***Due to the lack of resources as Colab provided resouces for very limited amount of time.***  
+The excellent results presented are therefore for a standard fine-tuned EfficientNet-B4, where the optimizer trained the unfrozen final classifier.
+
+### ***To train the intended custom architecture, the variable in the training loop should be changed from `model` to `custom_model`. This would be an interesting experiment to see how the custom deconvolution block affects performance.***
