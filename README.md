@@ -105,10 +105,16 @@ The classification report provides a detailed breakdown of the model's performan
 | Grape___healthy                      | 1.00      | 1.00   | 1.00     | 423     |
 
 **✅ Summary metrics**
-| Metric        | Precision | Recall | F1-Score | Support |
+| Metric        | 
 |---------------|-----------|--------|----------|---------|
 | **Accuracy**  |           |        | **0.98** | 1805    |
 | **Macro avg** | 0.98      | 0.98   | 0.98     | 1805    |
 | **Weighted avg** | 0.98   | 0.98   | 0.98     | 1805    |
 
 
+# **5. 🚀 How to Replicate**
+
+* Prerequisites
+Make sure you have Python 3 and the following libraries installed. You can install them using pip:
+
+`pip install torch torchvision numpy matplotlib scikit-learn timm`
