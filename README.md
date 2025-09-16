@@ -125,6 +125,5 @@ Make sure you have Python 3 and the following libraries installed. You can insta
 `git clone https://github.com/Anindya4/Plant-leaf-disease-recognition-2.git`
 `cd Plant-leaf-disease-recognition-2`
 
-**2. Dataset:**
-
+**2. Dataset:**  
 Download the Grapevine Leaves Image Dataset from files and place the GrapeVine.zip file in a directory accessible by the notebook (e.g., `/content/drive/MyDrive/Dataset/ in Google Colab`).
