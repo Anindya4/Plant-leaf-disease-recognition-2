@@ -23,7 +23,7 @@ This project demonstrates the use of a deep learning model to classify plant lea
 
 The goal of this project is to build an accurate and robust image classification model for identifying diseases in grapevine leaves. Early and accurate detection of diseases like Black Rot, Esca, and Leaf Blight is crucial for maintaining crop health and yield. This notebook covers the entire workflow from data loading and augmentation to model building, training, and evaluation.
 
-***The model achieves a test accuracy of 98.17%.***
+### ***The model achieves a test accuracy of 98.17%.***
 
 # **2. 🖼️ Dataset**
 
