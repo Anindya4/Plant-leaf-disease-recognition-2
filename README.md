@@ -114,8 +114,7 @@ The classification report provides a detailed breakdown of the model's performan
 
 # **5. 🚀 How to Replicate**
 
-* Prerequisites
+* **Prerequisites:**
 Make sure you have Python 3 and the following libraries installed. You can install them using pip:
-
-```pip install torch torchvision numpy matplotlib scikit-learn timm```
+ ```pip install torch torchvision numpy matplotlib scikit-learn timm```
 
