@@ -77,7 +77,7 @@ The original classifier is replaced with a custom fully connected head that incl
     * A final linear layer mapping the 512 units to the 4 output classes.
 
 ### The final model (CustomEfficientNetB4) integrates these components in the following forward pass sequence:
-### ***Image -> Backbone -> CustomDeconvCNN -> Original ConvHead -> Global Pooling -> CustomClassifier -> Output***
+### `***Image -> Backbone -> CustomDeconvCNN -> Original ConvHead -> Global Pooling -> CustomClassifier -> Output***`
 
 * ## **🎯 Training Process:**
 * ***Environment:*** The model was trained in a Google Colab environment using a T4 GPU.
@@ -124,7 +124,7 @@ Make sure you have Python 3 and the following libraries installed. You can insta
 
 * ### **⚙️ Setup**
 **1. 🧬 Clone the Repository:**  
-`git clone https://github.com/Anindya4/Plant-leaf-disease-recognition-2.git`
+`git clone https://github.com/Anindya4/Plant-leaf-disease-recognition-2.git`  
 `cd Plant-leaf-disease-recognition-2`
 
 **2. Dataset:**  
