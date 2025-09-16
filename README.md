@@ -40,3 +40,20 @@ The dataset is split as follows:
 The initial training set was further divided into a final training set (85%) and a validation set (15%) using stratified sampling to ensure that the class distribution remained consistent across both splits.
 * Final Training Set: 6,138 images
 * Validation Set: 1,084 images
+
+# **3. 🛠️ Methodology**
+
+* ## **🔄Data Preprocessing & 🎛️Augmentation**
+To improve model generalization and prevent overfitting, extensive data augmentation was applied to the training dataset.
+
+### **🧪Training Transforms:**
+* **Resize(256):** Resizes images to 256x256 pixels.
+* **RandomHorizontalFlip():** Randomly flips images horizontally.
+* **RandomRotation(35):** Randomly rotates images by up to 35 degrees.
+* **ColorJitter():** Randomly changes the brightness, contrast, and saturation.
+* **CenterCrop(224):** Crops the image to 224x224 from the center.
+* **ToTensor():** Converts images to PyTorch tensors.
+* **ormalize():** Normalizes tensors with ImageNet's mean and standard deviation.
+
+### **🧪Validation & Test Transforms:**
+Only essential preprocessing steps (Resize, CenterCrop, ToTensor, Normalize) were applied to the validation and test sets to ensure a consistent evaluation.
