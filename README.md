@@ -138,7 +138,7 @@ Download the Grapevine Leaves Image Dataset from files and place the GrapeVine.z
 
 An important detail was discovered during the analysis of the notebook. Although a `CustomEfficientNetB4` class with a deconvolutional block was defined, the training loop in `Cell 33` was executed on the original `timm` model instance (model), not the `custom one (custom_model)`.   
 
-### `Due to the lack of resources as Colab provided resouces for very limited amount of time.`  
-The excellent results presented are therefore for a standard fine-tuned EfficientNet-B4, where the optimizer trained the unfrozen final classifier.
+### `Due to the lack of resources as Colab provided resouces for very limited amount of time.The excellent results presented are therefore for a standard fine-tuned EfficientNet-B4, where the optimizer trained the unfrozen final classifier.`  
+
 
 ### ***To train the intended custom architecture, the variable in the training loop should be changed from `model` to `custom_model`. This would be an interesting experiment to see how the custom deconvolution block affects performance.***
