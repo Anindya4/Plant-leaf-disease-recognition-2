@@ -25,7 +25,7 @@ The goal of this project is to build an accurate and robust image classification
 
 ### ***The model achieves a test accuracy of 98.17%.***
 
-# **2. 🖼️ Dataset**
+# **2. 🗂️ Dataset**
 
 The model is trained on a dataset of grapevine leaf images, which are organized into four classes:
 * Grape___Black_rot
@@ -60,16 +60,16 @@ Only essential preprocessing steps (Resize, CenterCrop, ToTensor, Normalize) wer
 
 * ## **💻 Model Architecture:**  
 The core of this project is a custom model built upon the EfficientNet-B4 architecture, pre-trained on the ImageNet dataset. This approach utilizes transfer learning.
-1. ***Base Model:***  
+1. ***🧱 Base Model:***  
 efficientnet_b4 is loaded from the timm (PyTorch Image Models) library.
-2. ***Feature Extractor (Backbone):***  
+2. ***✂️ Feature Extractor (Backbone):***  
 The main convolutional blocks of EfficientNet-B4 are used as a feature extractor. The weights of these layers are frozen (requires_grad = False), so they are not updated during training.
-3. ***Custom Deconvolution Block (CustomDeconvCNN):***  
+3. ***➕ Custom Deconvolution Block (CustomDeconvCNN):***  
 A custom module was designed to refine the features extracted by the backbone. This block consists of:
     * Two Transposed Convolution (ConvTranspose2d) layers to upsample the feature maps.
     * Two standard Convolution (Conv2d) layers for further feature processing.
 This block is inserted between the backbone and the final classification head.
-4. ***Custom Classifier (CustomClassifier):***  
+4. ***➕ Custom Classifier (CustomClassifier):***  
 The original classifier is replaced with a custom fully connected head that includes:
     * A linear layer mapping input features to 512 hidden units.
     * A ReLU activation function.
@@ -136,7 +136,9 @@ Download the Grapevine Leaves Image Dataset from files and place the GrapeVine.z
 
 # **6. ⚠️ Note on Implementation**
 
-An important detail was discovered during the analysis of the notebook. Although a `CustomEfficientNetB4` class with a deconvolutional block was defined, the training loop in `Cell 33` was executed on the original `timm` model instance (model), not the `custom one (custom_model)`.   ***Due to the lack of resources as Colab provided resouces for very limited amount of time.***  
+An important detail was discovered during the analysis of the notebook. Although a `CustomEfficientNetB4` class with a deconvolutional block was defined, the training loop in `Cell 33` was executed on the original `timm` model instance (model), not the `custom one (custom_model)`.   
+
+***`Due to the lack of resources as Colab provided resouces for very limited amount of time.`***  
 The excellent results presented are therefore for a standard fine-tuned EfficientNet-B4, where the optimizer trained the unfrozen final classifier.
 
 ### ***To train the intended custom architecture, the variable in the training loop should be changed from `model` to `custom_model`. This would be an interesting experiment to see how the custom deconvolution block affects performance.***
