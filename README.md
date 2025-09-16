@@ -58,15 +58,19 @@ To improve model generalization and prevent overfitting, extensive data augmenta
 ### **🧪 Validation & Test Transforms:**
 Only essential preprocessing steps (Resize, CenterCrop, ToTensor, Normalize) were applied to the validation and test sets to ensure a consistent evaluation.
 
-* ## **💻 Model Architecture:**
+* ## **💻 Model Architecture:**  
 The core of this project is a custom model built upon the EfficientNet-B4 architecture, pre-trained on the ImageNet dataset. This approach utilizes transfer learning.
-1. ***Base Model:*** efficientnet_b4 is loaded from the timm (PyTorch Image Models) library.
-2. ***Feature Extractor (Backbone):*** The main convolutional blocks of EfficientNet-B4 are used as a feature extractor. The weights of these layers are frozen (requires_grad = False), so they are not updated during training.
-3. ***Custom Deconvolution Block (CustomDeconvCNN):*** A custom module was designed to refine the features extracted by the backbone. This block consists of:
+1. ***Base Model:***  
+efficientnet_b4 is loaded from the timm (PyTorch Image Models) library.
+2. ***Feature Extractor (Backbone):***  
+The main convolutional blocks of EfficientNet-B4 are used as a feature extractor. The weights of these layers are frozen (requires_grad = False), so they are not updated during training.
+3. ***Custom Deconvolution Block (CustomDeconvCNN):***  
+A custom module was designed to refine the features extracted by the backbone. This block consists of:
     * Two Transposed Convolution (ConvTranspose2d) layers to upsample the feature maps.
     * Two standard Convolution (Conv2d) layers for further feature processing.
 This block is inserted between the backbone and the final classification head.
-4. ***Custom Classifier (CustomClassifier):*** The original classifier is replaced with a custom fully connected head that includes:
+4. ***Custom Classifier (CustomClassifier):***  
+The original classifier is replaced with a custom fully connected head that includes:
     * A linear layer mapping input features to 512 hidden units.
     * A ReLU activation function.
     * A Dropout layer (p=0.3) to prevent overfitting.
@@ -114,14 +118,12 @@ The classification report provides a detailed breakdown of the model's performan
 
 # **5. 🚀 How to Replicate**
 
-* ### **⚒️ Prerequisites:**
-
+* ### **⚒️ Prerequisites:**  
 Make sure you have Python 3 and the following libraries installed. You can install them using pip:
  ```pip install torch torchvision numpy matplotlib scikit-learn timm```
 
 * ### **⚙️ Setup**
-**1. 🧬 Clone the Repository:**
-
+**1. 🧬 Clone the Repository:**  
 `git clone https://github.com/Anindya4/Plant-leaf-disease-recognition-2.git`
 `cd Plant-leaf-disease-recognition-2`
 
