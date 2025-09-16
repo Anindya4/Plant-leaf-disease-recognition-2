@@ -95,14 +95,19 @@ The model demonstrated excellent performance on the test set, validating its eff
 
 * ## ***Classification Report:***
 The classification report provides a detailed breakdown of the model's performance, showing high precision, recall, and F1-scores for all four classes.
+**✅ Class-wise metrics**
 | Class                                | Precision | Recall | F1-Score | Support |
 |--------------------------------------|-----------|--------|----------|---------|
 | Grape___Black_rot                    | 1.00      | 0.93   | 0.96     | 472     |
 | Grape___Esca_(Black_Measles)         | 0.94      | 1.00   | 0.97     | 480     |
 | Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | 1.00 | 1.00   | 1.00     | 430     |
 | Grape___healthy                      | 1.00      | 1.00   | 1.00     | 423     |
-| **Accuracy**                         |           |        | **0.98** | 1805    |
-| **Macro avg**                        | 0.98      | 0.98   | 0.98     | 1805    |
-| **Weighted avg**                     | 0.98      | 0.98   | 0.98     | 1805    |
+
+**✅ Summary metrics**
+| Metric        | Precision | Recall | F1-Score | Support |
+|---------------|-----------|--------|----------|---------|
+| **Accuracy**  |           |        | **0.98** | 1805    |
+| **Macro avg** | 0.98      | 0.98   | 0.98     | 1805    |
+| **Weighted avg** | 0.98   | 0.98   | 0.98     | 1805    |
 
 
