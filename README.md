@@ -105,7 +105,7 @@ The classification report provides a detailed breakdown of the model's performan
 | Grape___healthy                      | 1.00      | 1.00   | 1.00     | 423     |
 
 **✅ Summary metrics**
-| Metric        | 
+| Metric        |           |        |          |         |
 |---------------|-----------|--------|----------|---------|
 | **Accuracy**  |           |        | **0.98** | 1805    |
 | **Macro avg** | 0.98      | 0.98   | 0.98     | 1805    |
@@ -119,4 +119,3 @@ Make sure you have Python 3 and the following libraries installed. You can insta
 
 ```pip install torch torchvision numpy matplotlib scikit-learn timm```
 
-<pre> ```python pip install torch torchvision numpy matplotlib scikit-learn timm ``` </pre>
