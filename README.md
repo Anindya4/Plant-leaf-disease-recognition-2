@@ -53,7 +53,7 @@ To improve model generalization and prevent overfitting, extensive data augmenta
 * ***ColorJitter():*** Randomly changes the brightness, contrast, and saturation.
 * ***CenterCrop(224):*** Crops the image to 224x224 from the center.
 * ***ToTensor():*** Converts images to PyTorch tensors.
-* ***ormalize():*** Normalizes tensors with ImageNet's mean and standard deviation.
+* ***Normalize():*** Normalizes tensors with ImageNet's mean and standard deviation.
 
 ### **🧪 Validation & Test Transforms:**
 Only essential preprocessing steps (Resize, CenterCrop, ToTensor, Normalize) were applied to the validation and test sets to ensure a consistent evaluation.
