@@ -4,20 +4,20 @@ This project demonstrates the use of a deep learning model to classify plant lea
 # **📋 Table of Contents**
 
 1. [Overview](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#1--overview)
-2. Dataset
-3. Methodology
-    - Data Preprocessing & Augmentation
-    - Model Architecture
-    - Training Process
-4. Results
-    - Performance Metrics
-    - Training & Validation Curves
-    - Confusion Matrix
-    - Classification Report
-6. How to Replicate
-    - Prerequisites
-    - Setup
-7. Note on Implementation
+2. [Dataset](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#2-%EF%B8%8F-dataset)
+3. [Methodology](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#3-%EF%B8%8F-methodology)
+    - [Data Preprocessing & Augmentation](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#data-preprocessing--%EF%B8%8Faugmentation)
+    - [Model Architecture](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#-model-architecture)
+    - [Training Process](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#-model-architecture)
+4. [Results](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#4--results)
+    - [Performance Metrics](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#performance-metrics)
+    - [Training & Validation Curves]()
+    - [Confusion Matrix](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#confusion-matrix)
+    - [Classification Report](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#classification-report)
+6. [How to Replicate](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#5--how-to-replicate)
+    - [Prerequisites](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#%EF%B8%8F-prerequisites)
+    - [Setup](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#%EF%B8%8F-setup)
+7. [Note on Implementation](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#6-%EF%B8%8F-note-on-implementation)
 
 # **1. 📖 Overview**
 
@@ -120,12 +120,14 @@ The classification report provides a detailed breakdown of the model's performan
 
 * ### **⚒️ Prerequisites:**  
 Make sure you have Python 3 and the following libraries installed. You can install them using pip:  
-```pip install torch torchvision numpy matplotlib scikit-learn timm```
+```python
+pip install torch torchvision numpy matplotlib scikit-learn timm```
 
 * ### **⚙️ Setup**
 **1. 🧬 Clone the Repository:**  
-`git clone https://github.com/Anindya4/Plant-leaf-disease-recognition-2.git`  
-`cd Plant-leaf-disease-recognition-2`
+```bash
+git clone https://github.com/Anindya4/Plant-leaf-disease-recognition-2.git
+cd Plant-leaf-disease-recognition-2```
 
 **2. Dataset:**  
 Download the Grapevine Leaves Image Dataset from files and place the GrapeVine.zip file in a directory accessible by the notebook (e.g., `/content/drive/MyDrive/Dataset/ in Google Colab`).
@@ -134,7 +136,7 @@ Download the Grapevine Leaves Image Dataset from files and place the GrapeVine.z
 
 **Run the Notebook:**  Execute the cells in the `Notebook.ipynb` file sequentially.
 
-# **6. ⚠️ Note on Implementation**
+# **6. ⚠️ Note on Implementation ⚠️**
 
 An important detail was discovered during the analysis of the notebook. Although a `CustomEfficientNetB4` class with a deconvolutional block was defined, the training loop in `Cell 33` was executed on the original `timm` model instance (model), not the `custom one (custom_model)`.   
 
