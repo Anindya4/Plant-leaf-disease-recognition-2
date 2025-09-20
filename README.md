@@ -3,7 +3,7 @@ This project demonstrates the use of a deep learning model to classify plant lea
 
 # **📋 Table of Contents**
 
-1. Overview
+1. [Overview](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#1--overview)
 2. Dataset
 3. Methodology
     - Data Preprocessing & Augmentation
