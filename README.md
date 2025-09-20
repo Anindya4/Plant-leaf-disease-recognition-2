@@ -11,7 +11,6 @@ This project demonstrates the use of a deep learning model to classify plant lea
     - [Training Process](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#-model-architecture)
 4. [Results](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#4--results)
     - [Performance Metrics](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#performance-metrics)
-    - [Training & Validation Curves]()
     - [Confusion Matrix](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#confusion-matrix)
     - [Classification Report](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#classification-report)
 6. [How to Replicate](https://github.com/Anindya4/Plant-leaf-disease-recognition-2?tab=readme-ov-file#5--how-to-replicate)
